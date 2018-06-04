@@ -34,14 +34,55 @@ html {
         height: 100%;
         transform: translateY(-3px); /* account for the height of the clock hands */
       }
+
+      .mark {
+        position: absolute;
+        width: 8px;
+        height: 4px;
+        background-color: #EFEFEF;
+        &-12 {
+          top: 9%;
+          left: 50%;
+        }
+        &-3 {
+          top: 50%;
+          left: 90%;
+        }
+        &-6 {
+          top: 91%;
+          left: 50%;
+        }
+        &-9 {
+          top: 50%;
+          left: 10%;
+        }
+      }
     
-      .hand {
+      .hour-hand {
+        width:32%;
+        height:10px;
+        background:black;
+        position: absolute;
+        top: 61%;
+        // transform: rotate(20deg);
+        transform-origin: 137%;
+      }
+      .min-hand {
         width:50%;
-        height:6px;
+        height:8px;
         background:black;
         position: absolute;
         top:50%;
-        transform: rotate(20deg);
+        // transform: rotate(20deg);
+        transform-origin: 100%;
+      }
+      .seconds-hand {
+        width:50%;
+        height:5px;
+        background:black;
+        position: absolute;
+        top:50%;
+        // transform: rotate(20deg);
         transform-origin: 100%;
       }
     }

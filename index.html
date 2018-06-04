@@ -8,24 +8,38 @@
 <body>
 
     <div class="clock">
+      <div class="mark mark-12"></div>
+      <div class="mark mark-3"></div>
+      <div class="mark mark-6"></div>
+      <div class="mark mark-9"></div>
       <div class="clock-face">
-        <div class="hand hour-hand"></div>
-        <div class="hand min-hand"></div>
-        <div class="hand seconds-hand"></div>
+        <div class="hour-hand"></div>
+        <div class="min-hand"></div>
+        <div class="seconds-hand"></div>
       </div>
     </div>
 
   <script>
 
     const secondsHand = document.querySelector('.seconds-hand')
+    const minutesHand = document.querySelector('.min-hand')
+    const hourHand = document.querySelector('.hour-hand')
+    
+
+    function getShowTimePartials(getTimePartialMethod,  howManyPartialsOnTheClockFace, element) {
+      const partial = getTimePartialMethod
+      const partialDegrees = (((partial / howManyPartialsOnTheClockFace) * 360) + 90)
+      element.style.transform = `rotate(${partialDegrees}deg)`
+    }
 
     function showTime() {
       const now = new Date()
-      const seconds = now.getSeconds()
-      // console.log(seconds)
-      const secondsDegrees = (((seconds / 60) * 360) + 90)
-      secondsHand.style.transform = `rotate(${secondsDegrees}deg)`
+      getShowTimePartials(now.getSeconds(), 60, secondsHand)
+      getShowTimePartials(now.getMinutes(), 60, minutesHand)
+      getShowTimePartials(now.getHours(), 12, hourHand)
     }
+
+
 
     setInterval(showTime, 1000)
 

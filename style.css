@@ -26,13 +26,43 @@ html {
       height: 100%;
       transform: translateY(-3px);
       /* account for the height of the clock hands */ }
-    html body .hand {
+    html body .mark {
+      position: absolute;
+      width: 8px;
+      height: 4px;
+      background-color: #EFEFEF; }
+      html body .mark-12 {
+        top: 9%;
+        left: 50%; }
+      html body .mark-3 {
+        top: 50%;
+        left: 90%; }
+      html body .mark-6 {
+        top: 91%;
+        left: 50%; }
+      html body .mark-9 {
+        top: 50%;
+        left: 10%; }
+    html body .hour-hand {
+      width: 32%;
+      height: 10px;
+      background: black;
+      position: absolute;
+      top: 61%;
+      transform-origin: 137%; }
+    html body .min-hand {
       width: 50%;
-      height: 6px;
+      height: 8px;
       background: black;
       position: absolute;
       top: 50%;
-      transform: rotate(20deg);
+      transform-origin: 100%; }
+    html body .seconds-hand {
+      width: 50%;
+      height: 5px;
+      background: black;
+      position: absolute;
+      top: 50%;
       transform-origin: 100%; }
 
 /*# sourceMappingURL=style.css.map */
